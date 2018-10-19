@@ -117,3 +117,43 @@
 
 - In **obj.method()** : `this` is a reference of the `object`
 - In **function()** : `this` is a reference of the `window`
+
+* If you want to change the state in method, you would get a message of `this` is undefined!
+
+  ```javascript
+  class Counter extends Component {
+    state = { count : 0}
+
+    handleIncrement() {
+        console.log(this.state); // this is undefined!
+    }
+
+    ...
+  }
+  ```
+
+  **First Solution** : Add constructor and bind method
+
+  - With `bind` method, we can set value of this
+
+  ```javascript
+  constructor(){
+      super();
+      this.handleIncrement = this.handleIncrement.bind(this);
+  }
+
+  handleIncrement() {
+      console.log(this);
+  }
+  ```
+
+* Second Solution : Use arrow function
+
+  - Arrow function don't rebind `this`
+  - Clean and fast!
+
+  ```javascript
+  handleIncrement = () => {
+    console.log(this);
+  };
+  ```
