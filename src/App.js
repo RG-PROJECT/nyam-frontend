@@ -32,7 +32,8 @@ const cardInfo1 = {
     },
     "reaction": {
       "comment" : commentArr
-    }
+    },
+    "comments": commentArr
 }
 
 const cardInfo2 = {
