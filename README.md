@@ -1,11 +1,9 @@
-## TIP / TIL
-
 # Useful Things
 
 ### 🎨 Code Formatter
 
 - Recommanded Code Formatter is `Prettier`
-- Install `Prettier` Plugin (VS Code)
+- Install `Prettier` Extension (VS Code)
 - Settings(cmd+,) -> Editor tab -> Activate `Format On Save`
 - Or add `"editor.formatOnSave": true` to user setting file
 
@@ -14,12 +12,12 @@
 - Get random image easily from `https://picsum.photos/200`
 - If you Change the number of the last, you can get more images.
 
-# React
+# Snippet of React
 
-### Simple React Snippets
+### ⛏ Simple React Snippets Extension
 
 - Create component file as `*.jsx`
-- And install plugin `Simple React Snippets` (VS Code)
+- And install extension `Simple React Snippets` (VS Code)
 - Then, we can use `Snippet Renders`
 
   ```javascript
@@ -47,38 +45,38 @@
 
   c.f. Result of code snippet `cc` is created seperated shape as a default.
 
-### Fragment (React v16)
+### 📦 Fragment (React v16)
 
 - Use `<Fragment>` instead of `<div>`.
 - Fragment let you group a list of children without adding extra nodes (ex. div tag)
 - Then, there is no need to return `div` and rendered html element has no `<div>` tag also.
 
-```javascript
+  ```javascript
   render() {
-    return (
+      return (
       <React.Fragment>
-        <h1>Hello world</h1>
-        <button>Button</button>
+          <h1>Hello world</h1>
+          <button>Button</button>
       </React.Fragment>
-    );
+      );
   }
-```
+  ```
 
-Rendering result :
+  Rendering result :
 
-```html
-    <!-- not use Fragment -->
-    <div>
-        <h1>Hello world</h1>
-        <button>Button</button>
-    </div>
+  ```html
+      <!-- not use Fragment -->
+      <div>
+          <h1>Hello world</h1>
+          <button>Button</button>
+      </div>
 
-    <!-- use Fragment -->
-    <h1>Hello world</h1>
-    <button>Button</button>
-```
+      <!-- use Fragment -->
+      <h1>Hello world</h1>
+      <button>Button</button>
+  ```
 
-### Import Styles
+### 🎀 Import Styles
 
 - Install `Bootstrap` by npm
   ```
@@ -89,33 +87,33 @@ Rendering result :
   import "bootstrap/dist/css/bootstrap.css";
   ```
 
-### Basic JS for React
+### 💎 Basic JS for React
 
 - `falsy` : stop there!
 
 - `truthy` : continue!
 
-string and number (except 0) is truthy
+  string and number (except 0) is truthy
 
-```javascript
-true && false; // false
+  ```javascript
+  true && false; // false
 
-true && "Hi"; // "Hi"
+  true && "Hi"; // "Hi"
 
-true && "Hi" && 1; // 1
-```
+  true && "Hi" && 1; // 1
+  ```
 
-That's why expression in return result is Plain Text `"Please create a new tag!"`
+  That's why expression in return result is Plain Text `"Please create a new tag!"`
 
-```javascript
-state = { tags: [] }
+  ```javascript
+  state = { tags: [] }
 
-render() {
-    return ({ this.state.tags.length === 0 && "Please create a new tag!"; })
-}
-```
+  render() {
+      return ({ this.state.tags.length === 0 && "Please create a new tag!"; })
+  }
+  ```
 
-## About `this`.state
+## 📌 About `this`.state
 
 - In **obj.method()** : `this` is a reference of the `object`
 - In **function()** : `this` is a reference of the `window`
