@@ -17,14 +17,15 @@ class Counter extends Component {
     );
   }
 
-  constructor() {
-    super();
-    console.log("constructor", this);
-  }
+  // constructor() {
+  //   super();
+  //   console.log("constructor", this);
+  //   this.handleIncrement = this.handleIncrement.bind(this); // return new instance of handleIcrement function
+  // }
 
-  handleIncrement() {
-    console.log(this);
-  }
+  handleIncrement = () => {
+    console.log("handle", this); // after binding, "this" is always referencing the current counter obj
+  };
 
   render() {
     let classes = this.getBadgeClasses();
