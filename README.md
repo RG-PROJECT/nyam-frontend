@@ -157,3 +157,46 @@
     console.log(this);
   };
   ```
+
+## 🐛 Debugging React Apps
+
+- Install Chrome / FF extension "React Developer Tools"
+- $r -> Can check the component and element easily!
+
+## 🐔 Local State
+
+Controlled component dosen't have local states.
+It receives all the data by a props
+and raise events whenever data need to be change
+
+- AS-IS
+
+```javascript
+handleIncrement = () => {
+  this.setState({ value: this.state.value + 1 });
+};
+
+// render ()
+<button onClick={this.handleIncrement} className="...">
+  +
+</button>;
+```
+
+- TO-BE
+
+```javascript
+// Remove handleIncrement()
+// handleIncrement = () => {
+//   this.setState({ value: this.state.value + 1 });
+// };
+
+// render ()
+<button
+  onClick={() => this.props.onIncrement(this.props.conter)}
+  className="..."
+>
+  +
+</button>
+```
+
+Let any of `this.state.**` remove
