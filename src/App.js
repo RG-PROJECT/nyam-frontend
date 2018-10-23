@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Card from "./components/card";
 import WriteForm from "./components/writeForm";
+import { connect } from "react-redux";
+import ReduxTest from "./components/reduxTest";
 
 const commentArr = [
   {
@@ -26,7 +28,7 @@ const cardInfo1 = {
   author: "godori",
   regdate: "20181010", // Date Type 시간추가 (시간 대충가는 라이브러리)
   contents: {
-    img: "https://avatars2.githubusercontent.com/u/8243284?s=460&v=4",
+    img: "https://picsum.photos/200",
     text: "나는 이런 밥을 먹었고 점심은 이러했다.\n저녁은 이거 먹을거임"
   },
   reaction: {
@@ -42,7 +44,7 @@ const cardInfo2 = {
   author: "TOTO",
   regdate: "20181016",
   contents: {
-    img: "https://avatars1.githubusercontent.com/u/19944408?s=200&v=4",
+    img: "https://picsum.photos/201",
     text:
       "토토는 토토해 토토는 토토해 토토는 토토해 토토는 토토해 토토는 토토해 토토는 토토해 토토는 토토해 토토는 토토해 "
   },
@@ -58,7 +60,7 @@ const cardInfo3 = {
   author: "Deer.White",
   regdate: "20181011",
   contents: {
-    img: "https://avatars0.githubusercontent.com/u/42726788?s=200&v=4",
+    img: "https://picsum.photos/203",
     text: "냥냥구들 귀여워 ~! "
   },
   reaction: {
@@ -84,6 +86,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <ReduxTest />
         <WriteForm />
         {this.state.cardList.map(card => {
           return (
