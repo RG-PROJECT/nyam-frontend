@@ -1,3 +1,7 @@
+# Pages
+
+📜 [DEVLOG](https://godori.github.io/nyam-frontend/DEVLOG)
+
 # Useful Things
 
 ### 🎨 Code Formatter
