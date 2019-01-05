@@ -1,0 +1,25 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  margin: 30px;
+  max-width: 500px;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border-radius: 3px;
+  border: 1px solid #e6e6e6;
+}
+
+.cardHeader {
+  border-bottom: 1px solid #efefef;
+}
+
+.cardTitle {
+  margin: 20px;
+}
+
+.cardAuthor,
+.cardRegdate {
+  margin: 10px;
+}

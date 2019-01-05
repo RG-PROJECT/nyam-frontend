@@ -4,3 +4,16 @@
   align-items: center;
   height: 100%;
 }
+
+.buttonArea {
+  position: fixed;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.card-add-button {
+  width: 50px;
+  width: 50px;
+}

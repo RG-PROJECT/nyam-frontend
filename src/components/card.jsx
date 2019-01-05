@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // import PropTypes from 'prop-types';
 import Contents from "./contents";
 import Reaction from "./reaction";
-import "./card.css";
+import "./css/card.css";
 
 class Card extends Component {
   render() {
@@ -25,7 +25,9 @@ class Header extends Component {
   render() {
     return (
       <div className="cardHeader">
-        <h3>{this.props.title}</h3>
+        <div className="cardTitle">
+          <h3>{this.props.title}</h3>
+        </div>
         <div className="cardAuthor">{this.props.author}</div>
         <div className="cardRegdate">{this.props.regdate}</div>
       </div>

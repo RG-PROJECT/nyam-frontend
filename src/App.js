@@ -4,6 +4,7 @@ import Card from "./components/card";
 import WriteForm from "./components/writeForm";
 import { connect } from "react-redux";
 import ReduxTest from "./components/reduxTest";
+import addButton from "./resources/addButton.svg";
 
 class App extends Component {
   state = {};
@@ -20,7 +21,7 @@ class App extends Component {
   };
 
   _callApi = () => {
-    return fetch("http://localhost:3000/cards")
+    return fetch("http://localhost:3001/cards")
       .then(result => result.json())
       .catch(err => console.log(err));
   };
@@ -44,6 +45,9 @@ class App extends Component {
     return (
       <div className={cards ? "App" : "Loading"}>
         {this.state.cards ? this._renderCards() : this._renderLoading()}
+        <div className="buttonArea">
+          <img src={addButton} className="card-add-button" alt="add-button" />
+        </div>
       </div>
     );
   }
