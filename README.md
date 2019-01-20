@@ -204,4 +204,3 @@ handleIncrement = () => {
 ```
 
 Let any of `this.state.**` remove
-
