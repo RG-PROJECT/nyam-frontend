@@ -6,6 +6,9 @@ import { connect } from "react-redux";
 import ReduxTest from "./components/reduxTest";
 import addButton from "./resources/addButton.svg";
 
+const BACKEND_HOSTNAME = "nyam.deerwhite.net";
+const BACKEND_PORT = "2083";
+
 class App extends Component {
   state = {};
 
@@ -21,7 +24,7 @@ class App extends Component {
   };
 
   _callApi = () => {
-    return fetch("http://localhost:3001/cards")
+    return fetch(`//${BACKEND_HOSTNAME}:${BACKEND_PORT}/cards`)
       .then(result => result.json())
       .catch(err => console.log(err));
   };
