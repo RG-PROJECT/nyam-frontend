@@ -12,6 +12,10 @@ TARGET_LOCATION="./node_modules/webpack-dev-server/ssl/server.pem"
 SOURCE_CERT_LOCATION=$(pwd)/$(dirname "../cert/nyam.deerwhite.net.pem")/nyam.deerwhite.net.pem
 SOURCE_KEY_LOCATION=$(pwd)/$(dirname "../cert/nyam.deerwhite.net.pem")/nyam.deerwhite.net.key
 
+if [ ! -f "$SOURCE_CERT_LOCATION" ] || [ ! -f "$SOURCE_KEY_LOCATION" ] ; then
+    echo "Certificate file does not exist.... SKIP"
+    exit 0
+fi
 echo Generate ${TARGET_LOCATION} from ${SOURCE_CERT_LOCATION} , ${SOURCE_KEY_LOCATION}
 rm -f ${TARGET_LOCATION} || true
 
