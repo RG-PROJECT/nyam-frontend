@@ -24,9 +24,12 @@ class App extends Component {
   };
 
   _callApi = () => {
-    return fetch(`//${BACKEND_HOSTNAME}:${BACKEND_PORT}/cards`)
-      .then(result => result.json())
-      .catch(err => console.log(err));
+    return (
+      fetch("https://nyam.deerwhite.net:2083/cards")
+        // return fetch(`//${BACKEND_HOSTNAME}:${BACKEND_PORT}/cards`)
+        .then(result => result.json())
+        .catch(err => console.log(err))
+    );
   };
 
   _renderCards = () => {
@@ -47,9 +50,11 @@ class App extends Component {
     }
     return (
       <div className={cards ? "App" : "Loading"}>
-        {this.state.cards ? this._renderCards() : this._renderLoading()}
-        <div className="buttonArea">
-          <img src={addButton} className="card-add-button" alt="add-button" />
+        <div className="cardWrapper">
+          {this.state.cards ? this._renderCards() : this._renderLoading()}
+          <div className="buttonArea">
+            <img src={addButton} className="card-add-button" alt="add-button" />
+          </div>
         </div>
       </div>
     );
