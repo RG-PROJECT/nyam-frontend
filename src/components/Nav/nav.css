@@ -1,12 +1,13 @@
 .nav-header-wrapper {
   position: fixed;
+  z-index: 100;
   top: 0px;
   left: 0px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  border: 1px solid tomato;
+  border-bottom: 1px solid #e6e6e6;
   background-color: #fff;
 }
 
