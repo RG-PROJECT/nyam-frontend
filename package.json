@@ -9,14 +9,15 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "^2.1.3",
     "redux": "^4.0.1",
     "sass-loader": "^7.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "NODE_PATH=src react-scripts start",
     "production": "PORT=8443 HTTPS=true react-scripts start",
-    "build": "react-scripts build",
+    "build": "NODE_PATH=src react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "postinstall": "sh ./copy-certificate.sh"

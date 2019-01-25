@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-// import PropTypes from 'prop-types';
-import Contents from "./contents";
-import Reaction from "./reaction";
-import "./css/card.css";
+import Contents from "components/Contents";
+import "./card.css";
 
 class Card extends Component {
   render() {

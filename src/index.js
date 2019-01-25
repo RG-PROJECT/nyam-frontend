@@ -1,17 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import AppTest from "./AppTest";
-import App from "./App";
+import Root from "./Root";
 // import "bootstrap/dist/css/bootstrap.css";
-import { createStore } from "redux";
-import { Provider } from "react-redux";
-import rootReducer from "./reducers/rootReducer";
 
-const store = createStore(rootReducer);
-
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById("root")
-);
+ReactDOM.render(<Root />, document.getElementById("root"));
