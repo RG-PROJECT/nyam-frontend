@@ -21,13 +21,15 @@ class Card extends Component {
 
 class Header extends Component {
   render() {
+    const { title, author, regdate } = this.props;
+
     return (
       <div className="cardHeader">
         <div className="cardTitle">
-          <h3>{this.props.title}</h3>
+          <h3>{title}</h3>
         </div>
-        <div className="cardAuthor">{this.props.author}</div>
-        <div className="cardRegdate">{this.props.regdate}</div>
+        <div className="cardAuthor">{author.name}</div>
+        <div className="cardRegdate">{regdate}</div>
       </div>
     );
   }

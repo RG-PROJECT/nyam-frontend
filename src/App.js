@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
-import { Home, Login } from "pages";
+import { Home, Login, Write } from "pages";
 import HeaderNav from "./components/Nav";
 import "./App.css";
 
@@ -10,6 +10,7 @@ const App = () => {
       <HeaderNav />
       <Route exact path="/" component={Home} />
       <Route path="/login" component={Login} />
+      <Route path="/write" component={Write} />
     </React.Fragment>
   );
 };
