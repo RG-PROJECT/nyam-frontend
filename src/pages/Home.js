@@ -1,30 +1,50 @@
 import React, { Component } from "react";
 import Card from "components/Card";
+import HeaderNav from "components/Nav";
+// import * as api from "lib/api";
+import "./home.css";
+import axios from "axios";
 import addButton from "resources/addButton.svg";
 const BACKEND_HOSTNAME = "nyam.deerwhite.net";
 const BACKEND_PORT = "2083";
 
+const GET_CARD_API = "https://nyam.deerwhite.net:2083/cards";
+const IS_LOGGED_URL = "https://nyam.deerwhite.net:2083/users/me";
+
 class Home extends Component {
   state = {};
 
-  componentDidMount() {
-    this._getCards();
-  }
-
-  _getCards = async () => {
-    const cards = await this._callApi();
-    this.setState({
-      cards
-    });
+  checkLogin = () => {
+    axios
+      .get(IS_LOGGED_URL)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
-  _callApi = () => {
-    return (
-      fetch("https://nyam.deerwhite.net:2083/cards")
-        // return fetch(`//${BACKEND_HOSTNAME}:${BACKEND_PORT}/cards`)
-        .then(result => result.json())
-        .catch(err => console.log(err))
-    );
+  componentDidMount() {
+    this.getCardList();
+  }
+
+  getCardList = async () => {
+    try {
+      const cards = await this.getApi(GET_CARD_API);
+      this.setState({
+        cards
+      });
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  getApi = async url => {
+    return axios
+      .get(url)
+      .then(result => result.data)
+      .catch(err => console.log(err));
   };
 
   _renderCards = () => {
@@ -40,18 +60,22 @@ class Home extends Component {
 
   render() {
     const { cards } = this.state;
-    {
-      console.log(cards);
-    }
     return (
-      <div className={cards ? "App" : "Loading"}>
-        <div className="cardWrapper">
-          {this.state.cards ? this._renderCards() : this._renderLoading()}
-          <div className="buttonArea">
-            <img src={addButton} className="card-add-button" alt="add button" />
+      <>
+        <HeaderNav />
+        <div className={cards ? "App" : "Loading"}>
+          <div className="cardWrapper">
+            {this.state.cards ? this._renderCards() : this._renderLoading()}
+            <div className="buttonArea">
+              <img
+                src={addButton}
+                className="card-add-button"
+                alt="add button"
+              />
+            </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }
